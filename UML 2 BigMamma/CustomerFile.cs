@@ -50,7 +50,7 @@ namespace UML_2_BigMamma
                 if (kunde.KundeId == id)
                     return kunde;
             }
-            return null;
+            return null!;
         }
 
         public Kunde GetKundeByName(string name)
@@ -60,30 +60,34 @@ namespace UML_2_BigMamma
                 if (kunde.KundeNavn == name)
                     return kunde;
             }
-            return null;
+            return null!;
         }
 
 
-        public Kunde GetKundeByTelefon(int telefon)
+        public Kunde? GetKundeByTelefon(int telefon)
         {
             foreach (Kunde kunde in Kunder)
             {
                 if (kunde.TelefonNummer == telefon)
                     return kunde;
             }
-            return null;
+            return null!;
         }
 
-        public Kunde Updater(int KundeId)
+        public Kunde Update(int KundeId, Kunde kunde)
         {
-            foreach (Kunde kunde in Kunder)
+            foreach (Kunde k in Kunder)
             {
-                if (kunde.KundeId == KundeId)
+                if (k.KundeId == KundeId)
                 {
-                   return Kunder[KundeId];
+                  k.KundeNavn = kunde.KundeNavn;
+                  k.Adresse = kunde.Adresse;
+                  k.TelefonNummer = kunde.TelefonNummer;
+                  k.Email = kunde.Email;
                 }
-                return null;
+                
             }
+            return kunde;
         }
 
         //public void RemoveById(int id) 

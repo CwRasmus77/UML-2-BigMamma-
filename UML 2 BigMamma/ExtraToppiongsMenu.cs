@@ -68,7 +68,7 @@ namespace UML_2_BigMamma
         {
             if (Toppings.ContainsKey(toppingId))
                 return Toppings[toppingId];
-            return null;
+            return null!;
         }
 
         public ExtraToppings Update(int toppingId, ExtraToppings toppings)

@@ -58,16 +58,19 @@ namespace UML_2_BigMamma
 
         }
 
-        public Pizza UpdateId(int pizzaId, Pizza pizza)
+        public Pizza Update(int pizzaId, Pizza pizza)
         {
             foreach (Pizza p in Pizzas.Values)
             {
-                if (pizzaId == pizza.PizzaId)
+                if (pizzaId == p.PizzaId)
                 {
-                    p.PizzaId = pizzaId;
+                    p.PizzaNavn = pizza.PizzaNavn;
                     p.PizzaPris = pizza.PizzaPris;
-                    
+                    p.PizzaBeskrivelse = pizza.PizzaBeskrivelse;
+                  
+                   
                 }
+                
             }
             return pizza;
         }

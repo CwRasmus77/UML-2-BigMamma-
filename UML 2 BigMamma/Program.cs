@@ -5,26 +5,22 @@ Store store = new Store();
 store.start();
 
 CustomerFile kundeliste = new CustomerFile();
-kundeliste.Kunder.Add(new Kunde(11, "Seb-o natchoman", "kæmpeslangegade 21", 112, "massivsnake@anaconda.dk "));
-kundeliste.RemoveById(10);
-kundeliste.OpdaterNavn(2, "El Dorado");
-kundeliste.OpdaterAdresse(2, "Nyvej 12");
-kundeliste.OpdaterTelefon(2, 92389012);
-kundeliste.OpdaterEmail(2, "updateretmail@mail.dk");
+kundeliste.AddKunde(new Kunde(11, "Seb-o natchoman", "kæmpeslangegade 21", 112, "massivsnake@anaconda.dk "));
+kundeliste.RemoveKunde(10);
+kundeliste.Update(4,new Kunde(4, "Oscar","El Dorado 99", 666, "idk@gmail.com"));
+
 
 Console.WriteLine("\n");
 kundeliste.PrintMenu();
 Console.WriteLine("\n");
 
 PizzaMenu pizzaMenu = new PizzaMenu();
-pizzaMenu.Pizzas.Add(20, new Pizza(20, "Hawaii", "Tomat, Ost & ananas", 80));
-pizzaMenu.OpdaterNavn(2, "Hawaii");
-pizzaMenu.OpdaterBeskrivelse(2, "Tomat, Ost & ananas");
-pizzaMenu.OpdaterPris(2, 80);
+pizzaMenu.AddPizza(new Pizza(20, "Hawaii", "Tomat, Ost & ananas", 80));
+pizzaMenu.Update(20, new Pizza(20, "Oscar special", "mixed kød m. dressing", 100));
 pizzaMenu.PrintMenu();
 
 Console.WriteLine("\n");
-pizzaMenu.FindPizzaByToppings("ananas");
+pizzaMenu.FindPizzaByToppings("Gorgonzola");
 Console.WriteLine("\n");
 
 ExtraToppiongsMenu Toppingsmenu = new ExtraToppiongsMenu();
