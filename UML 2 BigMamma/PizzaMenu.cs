@@ -58,7 +58,21 @@ namespace UML_2_BigMamma
 
         }
 
+        public Pizza UpdateId(int pizzaId, Pizza pizza)
+        {
+            foreach (Pizza p in Pizzas.Values)
+            {
+                if (pizzaId == pizza.PizzaId)
+                {
+                    p.PizzaId = pizzaId;
+                    p.PizzaPris = pizza.PizzaPris;
+                    
+                }
+            }
+            return pizza;
+        }
 
+        
 
         //public void RemoveById(int id)
         //{
@@ -106,6 +120,7 @@ namespace UML_2_BigMamma
                 Console.WriteLine(pizza);
             }
         }
+
 
 
 

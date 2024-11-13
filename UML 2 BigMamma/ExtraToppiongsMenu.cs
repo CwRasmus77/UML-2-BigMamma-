@@ -71,6 +71,18 @@ namespace UML_2_BigMamma
             return null;
         }
 
+        public ExtraToppings Update(int toppingId, ExtraToppings toppings)
+        {
+            foreach (ExtraToppings t in Toppings.Values)
+            {
+                if (toppingId == t.ToppingId)
+                {
+                    t.ToppingId = toppingId;
+                    t.Pris = toppings.Pris;
+                }
+            }
+            return toppings;
+        }
 
         //public void RemoveById(int id)
         //{

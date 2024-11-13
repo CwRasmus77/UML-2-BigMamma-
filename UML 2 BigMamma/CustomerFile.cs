@@ -74,6 +74,17 @@ namespace UML_2_BigMamma
             return null;
         }
 
+        public Kunde? Updater(int KundeId)
+        {
+            foreach (Kunde kunde in Kunder)
+            {
+                if (kunde.KundeId == KundeId)
+                {
+                   return Kunder[KundeId];
+                }
+                return null;
+            }
+        }
 
         //public void RemoveById(int id) 
         //{
