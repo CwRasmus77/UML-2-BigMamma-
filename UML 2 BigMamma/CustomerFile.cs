@@ -74,7 +74,7 @@ namespace UML_2_BigMamma
             return null;
         }
 
-        public Kunde? Updater(int KundeId)
+        public Kunde Updater(int KundeId)
         {
             foreach (Kunde kunde in Kunder)
             {
